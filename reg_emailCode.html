@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/emailCode.css">
+    <link rel="stylesheet" href="css/font.css">
+    <title>已发送验证码，请查收-|StarFall|</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/emailCode.js">   </script>
+</head>
+<body>
+    <div class="code-boxDiv code-box" onclick="">
+        <form action="confirm_reg" method="post">
+            <input type="search" class="code-hidden" id="code-hidden" name="reg_email_code">
+        <div class="code-box" onclick="">
+            <p class="code-item"></p>
+            <p class="code-item"></p>
+            <p class="code-item"></p>
+            <p class="code-item"></p>
+            <p class="code-item"></p>
+            <p class="code-item"></p>
+        </div>
+        <div class="text">
+                <p>验证码已发送至邮箱 <span th:text="${session.reg_email}">123@email.com</span> ,请注意查收</p>
+                <p>若未收到,请检查邮箱是否正确或 <a th:href="@{'/verify_code?vreg_user='+${session.reg_user}+'&vreg_password='+${session.reg_password}+'&vreg_email='+${session.reg_email}}">重新发送验证码</a> 至邮箱</p>
+                <p th:text="${session.code_tips}" style="color:#f35e5e;">aaaa</p>
+                <button type="submit">确认</button>
+                <button onclick="window.location.href = '/reg';" type="button">返回注册界面</button>
+        </div>
+        </form>
+    </div>
+    <div class="gray" th:style="'display:'+${session.reg_notice}+';'" onmousemove="Gologin()"></div>
+    <div class="confirm_box" id="confirm_box" th:style="'display:'+${session.reg_notice}+';'" onmousemove="Gologin()">
+        <h1>注册成功</h1>
+        <br>
+        <span>您已成功注册，请谨记账号密码，可通过邮箱找回<br>请谨慎将账号透露于别人，以免账号无法找回</span><br>
+        <br>
+        <br>
+        <span>本页面将在</span><span id="sec">3</span><span>s后跳转至登录页面</span><br><br>
+        <button onclick="login()">直接前往登录</button>
+    </div>
+</body>
+<script src="js/emailCode_back.js">
+</script>
+</html>

@@ -1,0 +1,74 @@
+html{
+    overflow-x: hidden;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: rgb(0, 174, 255);
+    border: 1px solid rgb(56, 27, 1);
+}
+::-webkit-scrollbar-track{
+    background-color: gray;
+}
+body{
+    /* display: flex;
+    justify-content: center; */
+    width: 100vw;
+    min-height: 100vh;
+}
+*{
+    margin:0px;
+    padding:0px;
+    user-select: none;
+}
+.mainContent{
+    position: relative;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+.return_top{
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    opacity: 0.3;
+    background-color: white;
+    text-align: center;
+    line-height: 55px;
+    top: 80%;
+    right: 3%;
+    border-radius: 10px;
+    z-index: 10;
+}
+.return_top img{
+    position: relative;
+    top: -6px;
+    left: -2.5px;
+    width: 50px;
+    height: 50px;
+}
+.return_top:hover{
+    opacity: 0.8;
+}
+.tail{
+    position: relative;
+    height:100px;
+    width: 100vw;
+    background: url(../img/tail.png);
+    background-size: 50px;
+    z-index: 1;
+    top:200px;
+}
+.tail p{
+    text-align: center;
+    position: relative;
+    height: 50px;
+    width: 100px;
+    left: 48%;
+    top: 25%;
+    color: antiquewhite;
+    backdrop-filter: blur(1px);
+    border-radius: 5px;
+}
